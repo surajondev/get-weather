@@ -1,26 +1,21 @@
+name: MasterDeployCI
 on:
   push:
-    branches: [ master ]
-
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Run npm install
+    - name: Install Packages
       run: npm install
-    - name: Build Code
-      run: |
-        echo Building code,
-        npm run-script build
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.5.9
-      with:
-        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-        BRANCH: gh-pages 
-        FOLDER: build #
+    - name: Deploy to GH Pages
+      run: npm run deploy
+    - name: Updating Domain
+      run: echo "Update domain"

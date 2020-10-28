@@ -9,13 +9,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v2
-
-      - name: Authorizing Github action
-        with:
-          token: "${{ secrets.GIT_TOKEN }}"
-        uses: oleksiyrudenko/gha-git-credentials@v1
-
-      - name: Doploy to GitHub Pages
-        uses: amitsingh-007/deploy-to-github-pages@v1.1
+      - name: new file
+        run : touch new.md

@@ -60,7 +60,7 @@ submit(){
   }
   render(){
     return(
-        <di>
+        <div>
             <div className="container form">
             <input className="input-box" name="t1" type="text" onChange={this.city}></input>
             <button className="submit-button" onClick={this.submit}><p className="p-submit">SUBMIT</p></button>
@@ -75,7 +75,7 @@ submit(){
             wind = {this.state.wind}
             visibility = {this.state.visibility}
             />
-        </di>
+        </div>
         )
     }
 }

@@ -38,7 +38,7 @@ a:hover{
 /* TYPOGRAPHY */
 h1{
   font-size : 2.5rem;
-  font-weight : 20px
+  font-weight : 20px;
 }
 
 h2{
@@ -100,14 +100,23 @@ p{
   width : 65%;
   box-shadow : 10px 10px #6c7077;
   justify-content: space-between;
+  transition: transform .5s ease;
+}
+.container-medium:hover {
+  transform: scale(1.025);
 }
 
-.container-small{
+.container-small {
   /* border : 1px solid black;; */
-  width : 30%;
-  background : #7c77fe;
-  border-radius : 10px;
-  box-shadow : 10px 10px #6c7077;
+  width: 30%;
+  background: #7c77fe;
+  border-radius: 10px;
+  box-shadow: 10px 10px #6c7077;
+  transition: transform .5s ease;
+}
+
+.container-small:hover {
+  transform: scale(1.025);
 }
 
 .main{
@@ -123,9 +132,20 @@ p{
   .container-medium{
     margin: 1rem 0;
     width: 100%;
+    transition: transform .5s ease;
   }
-  .container-small{
+
+  .container-medium:hover {
+    transform: scale(1.025);
+  }
+
+  .container-small {
     margin: 1rem 0;
-    width : 100%
+    width: 100%;
+    transition: transform .5s ease;
+  }
+
+  .container-small:hover {
+    transform: scale(1.025);
   }
 }

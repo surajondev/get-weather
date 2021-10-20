@@ -8,7 +8,7 @@ function Appcontainer(props){
                 <div className="container-medium main">
                     <img alt={"Weather Condition and City"} src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${props.icon}.svg`}></img>
                     <div>
-                        <h1 align="right">{Math.round(props.temp-273.15)}<sup>0</sup>C</h1>
+                        <h1 align="right">{Math.round(props.temp-273.15)}<sup>°</sup>C</h1>
                         <h2 align="right">{props.city} </h2>
                         <p align="right">{props.desc}</p>
                     </div>

@@ -41,14 +41,14 @@
   <p align="center">
     Access weather of different cities and other weather realated data
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/surajondev/get-weather"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://surajondev.github.io/get-weather/">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/surajondev/get-weather/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/surajondev/get-weather/issues">Request Feature</a>
   </p>
 </p>
 

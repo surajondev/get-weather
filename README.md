@@ -96,6 +96,8 @@ Its is powered by OpenWeather API.
 * [React](https://github.com/facebook/react)
 * [OpenWeather API](https://openweathermap.org/)
 
+## Deploy
+- The web app is deplaoyed on GitHub Pages.
 
 
 <!-- GETTING STARTED -->

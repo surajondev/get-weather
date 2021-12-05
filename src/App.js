@@ -7,7 +7,7 @@ class App extends React.Component {
       super()
       {
           this.state = {
-              city_name : "london",
+              cityName : "london",
               temp : [],
               city : [],
               icon : [],
@@ -21,7 +21,7 @@ class App extends React.Component {
       }
       this.city=this.city.bind(this)
       this.submit=this.submit.bind(this)
-      this.componentWillMount=this.componentWillMount.bind(this)
+      this.fetchCityData = this.fetchCityData.bind(this);
   }
   
 
@@ -31,16 +31,15 @@ class App extends React.Component {
           city_name : value
       }
       )
-
   }
 
-submit(){
-    this.componentWillMount();
+submit(e){
+    e.preventDefault();
+    fetchCityData(this.state.cityName);
 }
   
-  componentWillMount(){
-      const city = this.state.city_name
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215c`
+  fetchCityData(cityName){
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=0861a5029ae242c98d1f8edcbf54215c`
       fetch(url)
       .then(response => response.json())
       .then(response => (

@@ -34,7 +34,8 @@ class App extends React.Component {
 
   }
 
-submit(){
+submit(e){
+    e.preventDefault();
     this.componentWillMount();
 }
   
@@ -61,10 +62,10 @@ submit(){
   render(){
     return(
         <div>
-            <div className="container form">
+            <form className="container form">
             <input className="input-box" name="t1" type="text" onChange={this.city}></input>
             <button className="submit-button" onClick={this.submit}><p className="p-submit">SUBMIT</p></button>
-            </div>
+            </form>
             <Appcontainer 
             temp = {this.state.temp}
             city = {this.state.city}   

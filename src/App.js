@@ -43,7 +43,7 @@ submit(e){
   
   componentWillMount(){
       const city = this.state.city_name
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6d7476b11cfdf3b84d467784b2aa2fe`
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215`
       fetch(url)
       .then(response => {
         // Check if the response was successfull
@@ -89,6 +89,7 @@ submit(e){
             wind = {this.state.wind}
             visibility = {this.state.visibility}
             />
+           <Toast />    
         </div>
         )
     }

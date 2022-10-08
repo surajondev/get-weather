@@ -1,5 +1,6 @@
 import React from "react";
 import Appcontainer from "./Appcontainer.js"
+import Toast from "./Toast.js";
 import "./index.css"
 
 class App extends React.Component {
@@ -8,6 +9,8 @@ class App extends React.Component {
       {
           this.state = {
               city_name : "london",
+              error: false,
+              toast_message:'',
               temp : [],
               city : [],
               icon : [],
@@ -22,6 +25,7 @@ class App extends React.Component {
       this.city=this.city.bind(this)
       this.submit=this.submit.bind(this)
       this.componentWillMount=this.componentWillMount.bind(this)
+      this.closeToasterMessage = this.closeToasterMessage.bind(this)
   }
   
 
@@ -34,6 +38,17 @@ class App extends React.Component {
 
   }
 
+  closeToasterMessage(){
+      // Set error status back to false
+      this.setState(prevState => {
+          return {
+                  ...prevState, 
+                  error: false,
+                  toast_message:''
+                }
+      })
+  }
+
 submit(e){
     e.preventDefault();
     this.componentWillMount();
@@ -43,7 +58,14 @@ submit(e){
       const city = this.state.city_name
       const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215c`
       fetch(url)
-      .then(response => response.json())
+      .then(response => {
+        // Check if the response was successful
+        if (!response.ok)
+        { 
+          throw Error(response.status)
+        }
+        return response.json()
+      })
       .then(response => (
           this.setState(
               {
@@ -54,10 +76,25 @@ submit(e){
                   humidity : response.main.humidity,
                   pressure : response.main.pressure,
                   wind : response.wind.speed,
-                  visibility : response.visibility
+                  visibility : response.visibility,
+                  error: false,
+                  toast_message: '' 
               }
           )
       ))
+      .catch(error=>{
+          // Handle 404 error. Render toast message indicating location is invalid
+          if(error.message === '404')
+          { 
+              this.setState(prevState => {
+                  return {
+                         ...prevState, 
+                         error: true,
+                         toast_message: "The location entered is invalid. Please enter valid location." 
+                         }
+              })   
+          }            
+      })
   }
   render(){
     return(
@@ -76,6 +113,10 @@ submit(e){
             wind = {this.state.wind}
             visibility = {this.state.visibility}
             />
+           {this.state.error && <Toast 
+           closeToasterMessage = {this.closeToasterMessage}
+           toasterMessage = {this.state.toast_message}
+           />}  
         </div>
         )
     }

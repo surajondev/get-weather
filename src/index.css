@@ -60,6 +60,11 @@ p{
   font-size: 1.20rem;
 }
 
+.p-message{
+  margin: 0px;
+  font-size: 0.95rem;
+}
+
 /* FORM ELEMENT */
 
 .input-box{
@@ -76,6 +81,14 @@ p{
   background-color: #7c77fe;
   border-radius: 10em;
   padding: 0 2rem;
+}
+
+.cancel-button{
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .form{
@@ -119,6 +132,21 @@ p{
   transform: scale(1.025);
 }
 
+.toast-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+}
+
+.toast{
+  padding: 0.3rem 0.75rem;
+  background: #7c77fe;
+  display: flex;
+  justify-content: space-between;
+}
+
 .main{
   display:flex;
   justify-content: space-around;
@@ -147,5 +175,8 @@ p{
 
   .container-small:hover {
     transform: scale(1.025);
+  }
+  .p-message{
+    font-size: 0.75rem;
   }
 }

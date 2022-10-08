@@ -8,6 +8,7 @@ class App extends React.Component {
       {
           this.state = {
               city_name : "london",
+              error: false,
               temp : [],
               city : [],
               icon : [],

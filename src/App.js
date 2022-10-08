@@ -74,7 +74,9 @@ submit(e){
                   humidity : response.main.humidity,
                   pressure : response.main.pressure,
                   wind : response.wind.speed,
-                  visibility : response.visibility
+                  visibility : response.visibility,
+                  error: false,
+                  toast_message: '' 
               }
           )
       ))

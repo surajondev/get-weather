@@ -9,7 +9,8 @@ class App extends React.Component {
       {
           this.state = {
               city_name : "london",
-              error: true,
+              error: false,
+              toast_message:'',
               temp : [],
               city : [],
               icon : [],
@@ -53,7 +54,7 @@ submit(e){
   
   componentWillMount(){
       const city = this.state.city_name
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215`
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215c`
       fetch(url)
       .then(response => {
         // Check if the response was successfull
@@ -78,8 +79,17 @@ submit(e){
           )
       ))
       .catch(error=>{
-       // Handle 404 error
-      console.log(error)  
+          // Handle 404 error. Render toast message indicating location is invalid
+          if(error.message === '404')
+          { 
+              this.setState(prevState => {
+                  return {
+                         ...prevState, 
+                         error: true,
+                         toast_message: "The location entered is invalid. Please enter valid location." 
+                         }
+              })   
+          }            
       })
   }
   render(){
@@ -99,8 +109,9 @@ submit(e){
             wind = {this.state.wind}
             visibility = {this.state.visibility}
             />
-           {this.state.error && <Toast
-            closeToasterMessage = {this.closeToasterMessage}
+           {this.state.error && <Toast 
+           closeToasterMessage = {this.closeToasterMessage}
+           toasterMessage = {this.state.toast_message}
            />}  
         </div>
         )

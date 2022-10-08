@@ -141,7 +141,7 @@ p{
 }
 
 .toast{
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.75rem;
   background: #7c77fe;
   display: flex;
   justify-content: space-between;
@@ -175,5 +175,8 @@ p{
 
   .container-small:hover {
     transform: scale(1.025);
+  }
+  .p-message{
+    font-size: 0.75rem;
   }
 }

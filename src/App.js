@@ -43,7 +43,14 @@ submit(e){
       const city = this.state.city_name
       const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215c`
       fetch(url)
-      .then(response => response.json())
+      .then(response => {
+        // Check if the response was successfull
+        if (!response.ok)
+        { 
+          throw Error(response.status)
+        }
+        return response.json()
+      })
       .then(response => (
           this.setState(
               {
@@ -58,6 +65,10 @@ submit(e){
               }
           )
       ))
+      .catch(error=>{
+       // Handle 404 error
+      console.log(error)  
+      })
   }
   render(){
     return(

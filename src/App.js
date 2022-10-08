@@ -9,7 +9,7 @@ class App extends React.Component {
       {
           this.state = {
               city_name : "london",
-              error: false,
+              error: true,
               temp : [],
               city : [],
               icon : [],
@@ -24,6 +24,7 @@ class App extends React.Component {
       this.city=this.city.bind(this)
       this.submit=this.submit.bind(this)
       this.componentWillMount=this.componentWillMount.bind(this)
+      this.closeToasterMessage = this.closeToasterMessage.bind(this)
   }
   
 
@@ -35,6 +36,15 @@ class App extends React.Component {
       )
 
   }
+
+  closeToasterMessage()
+  {
+    // Set error status back to false
+    this.setState(prevState => {
+      return {...prevState, error: false}
+    })
+  }
+
 
 submit(e){
     e.preventDefault();
@@ -89,7 +99,9 @@ submit(e){
             wind = {this.state.wind}
             visibility = {this.state.visibility}
             />
-           <Toast />    
+           {this.state.error && <Toast
+            closeToasterMessage = {this.closeToasterMessage}
+           />}  
         </div>
         )
     }

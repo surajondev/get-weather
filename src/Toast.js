@@ -1,12 +1,16 @@
 import React from "react";
 
-function Toast()
-{
+function Toast(props)
+{  
+  const closeToasterMessage = () =>{
+    props.closeToasterMessage()
+  }
+
   return(
   <div className="toast-container">
     <div className="container toast">
        <p className="p-message">Hello</p>
-       <button className="cancel-button"><p className="p-message">x</p></button>
+       <button className="cancel-button" onClick={closeToasterMessage}><p className="p-message">x</p></button>
     </div>
   </div>)
 }

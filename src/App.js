@@ -38,14 +38,16 @@ class App extends React.Component {
 
   }
 
-  closeToasterMessage()
-  {
-    // Set error status back to false
-    this.setState(prevState => {
-      return {...prevState, error: false}
-    })
+  closeToasterMessage(){
+      // Set error status back to false
+      this.setState(prevState => {
+          return {
+                  ...prevState, 
+                  error: false,
+                  toast_message:''
+                }
+      })
   }
-
 
 submit(e){
     e.preventDefault();
@@ -57,7 +59,7 @@ submit(e){
       const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0861a5029ae242c98d1f8edcbf54215c`
       fetch(url)
       .then(response => {
-        // Check if the response was successfull
+        // Check if the response was successful
         if (!response.ok)
         { 
           throw Error(response.status)

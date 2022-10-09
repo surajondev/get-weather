@@ -15,7 +15,7 @@ function Appcontainer(props){
                 </div>
                 <div className="container-small">
                     <center>
-                        <img alt={"Humidity"} src="https://image.flaticon.com/icons/png/512/219/219816.png"></img>
+                        <img alt={"Humidity"} src="https://cdn-icons-png.flaticon.com/512/5664/5664979.png"></img>
                         <p>Humidity</p>
                         <h1>{props.humidity}%</h1>
                     </center>

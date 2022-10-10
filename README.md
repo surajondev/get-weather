@@ -97,7 +97,7 @@ Its is powered by OpenWeather API.
 * [OpenWeather API](https://openweathermap.org/)
 
 ## Deploy
-- The web app is deplaoyed on GitHub Pages.
+- The web app is deployed on GitHub Pages.
 
 
 <!-- GETTING STARTED -->

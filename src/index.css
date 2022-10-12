@@ -1,81 +1,82 @@
-body{
-  margin : 0 auto;
- font-family: Gill Sans MT ;
- background-color: #161d28;
+body {
+  margin: 0 auto;
+  font-family: Gill Sans MT;
+  background-color: #161d28;
 }
 
-img{
+img {
   width: 25%;
   min-width: 100px;
 }
 
 header,
-footer{
+footer {
   color: white;
   background-color: #192733;
   padding: 1.5rem;
 }
 
-footer{
-  margin-top:2rem;
+footer {
+  margin-top: 2rem;
 }
 
-a{
+a {
   text-decoration: none;
-  color: #7c77fe
+  color: #7c77fe;
 }
 
-a:hover{
-  color: cyan
+a:hover {
+  color: cyan;
 }
 
-.container{
+.container {
   width: 90%;
   max-width: 1110px;
   margin: 0 auto;
 }
 
 /* TYPOGRAPHY */
-h1{
-  font-size : 2.5rem;
-  font-weight : 20px;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 20px;
 }
 
-h2{
+h2 {
   font-size: 1.5rem;
   font-weight: 1;
 }
 
-p{
+p {
   font-size: 1.5rem;
   text-transform: uppercase;
-  color : white;
+  color: white;
 }
 
-.p-footer{
+.p-footer {
   font-size: 1rem;
 }
 
-.p-submit{
-  font-size: 1.20rem;
+.p-submit {
+  font-size: 1.2rem;
 }
 
-.p-message{
+.p-message {
   margin: 0px;
   font-size: 0.95rem;
 }
 
 /* FORM ELEMENT */
 
-.input-box{
+.input-box {
   font-size: 1.5rem;
   padding: 1rem;
-  border : 2px solid #161d28;
+  border: 2px solid #161d28;
   border-radius: 2em;
+  outline: none;
 }
 
-.submit-button{
-  margin-top:1rem;
+.submit-button {
+  margin-top: 1rem;
   margin-left: 1rem;
   font-family: Gill Sans MT;
   background-color: #7c77fe;
@@ -83,7 +84,7 @@ p{
   padding: 0 2rem;
 }
 
-.cancel-button{
+.cancel-button {
   color: white;
   background-color: transparent;
   border: none;
@@ -91,29 +92,28 @@ p{
   cursor: pointer;
 }
 
-.form{
-
+.form {
   justify-content: center;
 }
 
-.submit-button:hover{
+.submit-button:hover {
   background-color: #6c7077;
 }
 
-.row{
+.row {
   display: flex;
   margin-top: 2rem;
   justify-content: space-between;
 }
 
-.container-medium{
+.container-medium {
   /* border : 1px solid black; */
-  background : #7c77fe;
-  border-radius : 10px;
-  width : 65%;
-  box-shadow : 10px 10px #6c7077;
+  background: #7c77fe;
+  border-radius: 10px;
+  width: 65%;
+  box-shadow: 10px 10px #6c7077;
   justify-content: space-between;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 .container-medium:hover {
   transform: scale(1.025);
@@ -125,14 +125,14 @@ p{
   background: #7c77fe;
   border-radius: 10px;
   box-shadow: 10px 10px #6c7077;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .container-small:hover {
   transform: scale(1.025);
 }
 
-.toast-container{
+.toast-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -140,27 +140,27 @@ p{
   margin: 0px auto;
 }
 
-.toast{
+.toast {
   padding: 0.3rem 0.75rem;
   background: #7c77fe;
   display: flex;
   justify-content: space-between;
 }
 
-.main{
-  display:flex;
+.main {
+  display: flex;
   justify-content: space-around;
 }
 
-@media(max-width:700px){
-  .row{
+@media (max-width: 700px) {
+  .row {
     flex-direction: column;
     margin-top: 0;
   }
-  .container-medium{
+  .container-medium {
     margin: 1rem 0;
     width: 100%;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
   }
 
   .container-medium:hover {
@@ -170,13 +170,13 @@ p{
   .container-small {
     margin: 1rem 0;
     width: 100%;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
   }
 
   .container-small:hover {
     transform: scale(1.025);
   }
-  .p-message{
+  .p-message {
     font-size: 0.75rem;
   }
 }

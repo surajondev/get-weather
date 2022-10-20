@@ -2,9 +2,10 @@ import React from "react";
 import "./index.css";
 
 function Header(){
-    return(<header>
+    return(
+    <header>
         <div className="container" class="ui block header">
-            <h3>GET WEATHER</h3>
+            <h1 className="tittle">GET WEATHER</h1>
         </div>
     </header>
     )

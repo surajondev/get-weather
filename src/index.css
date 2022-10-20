@@ -4,9 +4,9 @@ body {
   background-color: #161d28;
 }
 
-img {
-  width: 25%;
+img:not(.large-icon) {
   min-width: 100px;
+  margin-top: 2rem;
 }
 
 header,
@@ -16,8 +16,12 @@ footer {
   padding: 1.5rem;
 }
 
+header {
+  margin-bottom: 2rem;
+}
+
 footer {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 a {
@@ -36,9 +40,10 @@ a:hover {
 }
 
 /* TYPOGRAPHY */
-h1 {
+.tittle {
   font-size: 2.5rem;
   font-weight: 20px;
+  padding-left: 7rem;
 }
 
 h2 {
@@ -57,7 +62,7 @@ p {
 }
 
 .p-submit {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .p-message {
@@ -68,11 +73,12 @@ p {
 /* FORM ELEMENT */
 
 .input-box {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 1rem;
   border: 2px solid #161d28;
   border-radius: 2em;
   outline: none;
+  margin-left: 0.8rem;
 }
 
 .submit-button {
@@ -82,6 +88,7 @@ p {
   background-color: #7c77fe;
   border-radius: 10em;
   padding: 0 2rem;
+  cursor: pointer;
 }
 
 .cancel-button {
@@ -107,6 +114,7 @@ p {
   margin-top: 2rem;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
 }
 
 .container-medium {
@@ -184,9 +192,10 @@ p {
     flex-direction: column;
     margin-top: 0;
   }
+
   .container-medium {
     margin: 1rem 0;
-    width: 100%;
+    width: 90%;
     transition: transform 0.5s ease;
   }
 
@@ -196,7 +205,7 @@ p {
 
   .container-small {
     margin: 1rem 0;
-    width: 100%;
+    width: 90%;
     transition: transform 0.5s ease;
   }
 
@@ -205,5 +214,12 @@ p {
   }
   .p-message {
     font-size: 0.75rem;
+  }
+  P { 
+    font-size: 1rem;
+  }
+  .tittle {
+    font-size: 2rem;
+    padding-left: 0.5rem;
   }
 }

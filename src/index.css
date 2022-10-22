@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  font-family: Gill Sans MT;
+  font-family: Arial, sans-serif;
   background-color: #161d28;
 }
 
@@ -84,7 +84,7 @@ p {
 .submit-button {
   margin-top: 1rem;
   margin-left: 1rem;
-  font-family: Gill Sans MT;
+  font-family: Arial, sans-serif;
   background-color: #7c77fe;
   border-radius: 10em;
   padding: 0 2rem;

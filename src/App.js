@@ -100,7 +100,7 @@ submit(e){
     return(
         <div>
             <form className="container form">
-            <input className="input-box" name="t1" type="text" placeholder="Search location" onChange={this.city}></input>
+            <input className="input-box" name="t1" type="text" placeholder="Search location" onChange={this.city} placeholder="Enter desired location"></input>
             <button className="submit-button" onClick={this.submit}><p className="p-submit">SUBMIT</p></button>
             </form>
             <Appcontainer 

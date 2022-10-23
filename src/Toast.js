@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Toast(props)
 {  
   const closeToasterMessage = () =>{
     props.closeToasterMessage()
   }
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      props.closeToasterMessage();
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [props.toasterMessage])
 
   return(
   <div className="toast-container">

@@ -23,7 +23,7 @@ function Appcontainer(props) {
         <div className="container-small">
           <img
             alt={'Humidity'}
-            src="https://cdn-icons-png.flaticon.com/512/481/481453.png"
+            src="https://cdn-icons-png.flaticon.com/512/727/727790.png"
             className="medium-icon"
           ></img>
           <center>

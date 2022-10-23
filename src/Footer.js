@@ -6,7 +6,7 @@ function Footer(){
         <footer>
             <div class="container">
                 <center>
-                    <p className="p-footer">Made with ❤️ by <a href="https://github.com/surajsrv11">Suraj Vishwakarma</a></p>
+                    <p className="p-footer">Made with ❤️ by <a href="https://github.com/surajondev">Suraj Vishwakarma</a></p>
                     <p className="p-footer">Source <a href="https://openweathermap.org/">OpenWeather</a></p>
                 </center>
             </div>

@@ -4,27 +4,27 @@ import Toast from "./Toast.js";
 import "./index.css";
 
 class App extends React.Component {
-  constructor(){
-      super()
-      this.state = {
-          city_name : "london",
-          error: false,
-          toast_message:'',
-          temp : [],
-          city : [],
-          icon : [],
-          desc : [],
-          humidity : [],
-          pressure : [],
-          wind : [],
-          visibility : [],
-          displayLoader: "none",
-      }
-      this.city=this.city.bind(this)
-      this.submit=this.submit.bind(this)
-      this.componentWillMount=this.componentWillMount.bind(this)
-      this.closeToasterMessage = this.closeToasterMessage.bind(this)
-      }
+  constructor() {
+    super();
+    this.state = {
+      city_name: "london",
+      error: false,
+      toast_message: "",
+      temp: [],
+      city: [],
+      icon: [],
+      desc: [],
+      humidity: [],
+      pressure: [],
+      wind: [],
+      visibility: [],
+      displayLoader: "none",
+    };
+    this.city = this.city.bind(this);
+    this.submit = this.submit.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
+    this.closeToasterMessage = this.closeToasterMessage.bind(this);
+  }
 
   city(event) {
     const { value } = event.target;
@@ -50,7 +50,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    document.body.style.filter = "blur(0px)"
+    document.body.style.filter = "blur(0px)";
     // Show loader
     this.setState({ displayLoader: "block" });
     const city = this.state.city_name;

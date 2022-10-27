@@ -1,3 +1,6 @@
+html {
+  font-size: 16px;
+}
 body {
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -63,6 +66,7 @@ p {
 
 .p-submit {
   font-size: 1rem;
+  border: none;
 }
 
 .p-message {
@@ -71,7 +75,9 @@ p {
 }
 
 /* FORM ELEMENT */
-
+.input-box:active {
+  border: 3px solid gray;
+}
 .input-box {
   font-size: 1.2rem;
   padding: 1rem;
@@ -188,6 +194,9 @@ p {
 }
 
 @media (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
   .row {
     flex-direction: column;
     margin-top: 0;
@@ -215,7 +224,7 @@ p {
   .p-message {
     font-size: 0.75rem;
   }
-  P { 
+  P {
     font-size: 1rem;
   }
   .tittle {
@@ -241,11 +250,19 @@ p {
 
 /* Safari */
 @-webkit-keyframes spin {
-0% { -webkit-transform: rotate(0deg); }
-100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

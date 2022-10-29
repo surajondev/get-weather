@@ -233,6 +233,11 @@ p {
   }
 }
 
+.toast-message.Toastify__toast-theme--light {
+  background-color: #7c77fe;
+  color: #ffffff;
+}
+
 /* Loader */
 .loader {
   border: 16px solid #f3f3f3;

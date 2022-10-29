@@ -1,7 +1,8 @@
 import React from "react";
 import Appcontainer from "./Appcontainer.js";
-import Toast from "./Toast.js";
 import "./index.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {
   constructor() {
@@ -27,9 +28,8 @@ class App extends React.Component {
   }
 
   city(event) {
-    const { value } = event.target;
     this.setState({
-      city_name: value,
+      city_name: event.target.value,
     });
   }
 
@@ -90,6 +90,11 @@ class App extends React.Component {
                 "The location entered is invalid. Please enter valid location.",
             };
           });
+          toast("The location entered is invalid", {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 1500,
+            className: 'toast-message'
+        });
         }
       });
   }
@@ -124,10 +129,7 @@ class App extends React.Component {
           visibility={this.state.visibility}
         />
         {this.state.error && (
-          <Toast
-            closeToasterMessage={this.closeToasterMessage}
-            toasterMessage={this.state.toast_message}
-          />
+          <ToastContainer/>
         )}
       </div>
     );

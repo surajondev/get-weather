@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className="container ui block header">
-        <h1 className="tittle">GET WEATHER 💨</h1>
+        <h1 className="tittle">GET WEATHER <span role="img" aria-labelledby="weather">💨</span></h1>
       </div>
     </header>
   );

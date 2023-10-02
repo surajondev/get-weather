@@ -1,0 +1,249 @@
+/* Reset some default styles */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Base styles */
+  body {
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #161d28;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #7c77fe;
+  }
+  
+  a:hover {
+    color: cyan;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+  
+  /* Typography */
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-left: 1rem; /* Changed from 7rem */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold; /* Fixed the font-weight value */
+  }
+  
+  p {
+    text-transform: uppercase;
+  }
+  
+  .p-footer {
+    font-size: 1rem;
+  }
+  
+  .p-submit {
+    font-size: 1rem;
+    border: none;
+  }
+  
+  .p-message {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  /* Form Elements */
+  .input-box:focus {
+    border: 3px solid gray; /* Changed from :active */
+  }
+  
+  .input-box {
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 2px solid #161d28;
+    border-radius: 2em;
+    outline: none;
+    margin-left: 0.8rem;
+  }
+  
+  .submit-button {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #7c77fe;
+    border-radius: 10em;
+    padding: 0 2rem;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .form {
+    justify-content: center;
+  }
+  
+  .submit-button:hover {
+    background-color: #6c7077;
+  }
+  
+  /* Information Card */
+  .row {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .container-medium,
+  .container-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+    background: #7c77fe;
+    border-radius: 10px;
+    box-shadow: 10px 10px #6c7077;
+    transition: transform 0.5s ease;
+  }
+  
+  .container-medium {
+    width: 65%;
+  }
+  
+  .container-small {
+    width: 30%;
+  }
+  
+  .container-medium:hover,
+  .container-small:hover {
+    transform: scale(1.025);
+  }
+  
+  .large-icon {
+    max-width: 100%;
+    height: auto; /* Improved image responsiveness */
+  }
+  
+  .medium-icon {
+    max-width: 100%;
+    height: auto; /* Improved image responsiveness */
+  }
+  
+  .text {
+    text-align: right;
+  }
+  
+  /* Toast */
+  .toast-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  .toast {
+    padding: 0.3rem 0.75rem;
+    background: #7c77fe;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Main Section */
+  .main {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 700px) {
+    html {
+      font-size: 14px;
+    }
+  
+    .row {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  
+    .container-medium,
+    .container-small {
+      margin: 1rem 0;
+      width: 90%;
+      transition: transform 0.5s ease;
+    }
+  
+    .container-medium:hover,
+    .container-small:hover {
+      transform: scale(1.025);
+    }
+  
+    .p-message {
+      font-size: 0.75rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+      padding-left: 0.5rem;
+    }
+  }
+  
+  /* Loader */
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #84da6e;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: fixed;
+    z-index: 1;
+    top: 40%;
+    left: 45vw;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

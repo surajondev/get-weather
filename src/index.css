@@ -3,7 +3,7 @@ html {
 }
 body {
   margin: 0 auto;
-  font-family: Arial, sans-serif;
+  font-family:   cursive;
   background-color: #161d28;
 }
 
@@ -15,12 +15,12 @@ img:not(.large-icon) {
 header,
 footer {
   color: white;
-  background-color: #192733;
+  background-image: linear-gradient(to right, #051937, #0d2750, #16376b, #214786, #2c57a3);
   padding: 1.5rem;
 }
 
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -45,7 +45,9 @@ a:hover {
 /* TYPOGRAPHY */
 .title {
   font-size: 2.5rem;
-  font-weight: 20px;
+  font-weight: 30px;
+  display: flex;
+  justify-content: center;
   padding-left: 0.6rem;
 }
 
@@ -95,6 +97,7 @@ p {
   border-radius: 10em;
   padding: 0 2rem;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .cancel-button {
@@ -110,6 +113,8 @@ p {
 }
 
 .submit-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(0.9);
   background-color: #6c7077;
 }
 

@@ -126,6 +126,7 @@ class App extends React.Component {
     e.preventDefault();
     this.componentWillMount();
   }
+
   clearInput() {
     this.setState({
       city_name: "",
@@ -197,11 +198,13 @@ class App extends React.Component {
             onChange={this.city}
             placeholder="Enter desired location"
           ></input>
-          <button className="submit-button" onClick={this.submit}>
+          <button className="button" onClick={this.submit}>
             <p className="p-submit">SUBMIT</p>
           </button>
-          <button className="clear-button" onClick={this.clearInput}>
-            Clear
+
+          <button className="button" onClick={this.clear}>
+            <p className="p-submit">CLEAR</p>
+
           </button>
         </form>
         <Appcontainer

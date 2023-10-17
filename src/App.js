@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 class App extends React.Component {
   constructor() {
     super();
+    
+    
     this.state = {
       city_name: "london",
       error: false,
@@ -21,10 +23,86 @@ class App extends React.Component {
       visibility: [],
       displayLoader: "none",
     };
+
+    this.componentDidMount = this.componentDidMount.bind(this);
     this.city = this.city.bind(this);
     this.submit = this.submit.bind(this);
+
+    this.clearInput = this.clearInput.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
+
     this.closeToasterMessage = this.closeToasterMessage.bind(this);
+  }
+
+  async componentDidMount() {
+    try {
+      const position = await this.getCurrentPosition();
+      const { latitude, longitude } = position.coords;
+
+      const reverseGeocodeRes = await fetch(
+        `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`
+      );
+      const reverseGeocodeData = await reverseGeocodeRes.json();
+      const cityName = reverseGeocodeData[0]?.name || "london";
+
+
+
+      this.setState({
+        city_name: cityName,
+      });
+
+      // Now fetch weather data based on the user's location
+      this.fetchWeatherData(cityName);
+    } catch (error) {
+      console.error("Error getting location or weather data:", error);
+      this.setState({
+        error: true,
+        toast_message: "Error fetching location or weather data.",
+      });
+    }
+  }
+
+  getCurrentPosition() {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  }
+
+  async fetchWeatherData(city) {
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw Error(response.status);
+      }
+      const responseData = await response.json();
+
+      this.setState({
+        temp: responseData.main.temp,
+        city: responseData.name,
+        icon: responseData.weather[0].icon,
+        desc: responseData.weather[0].description,
+        humidity: responseData.main.humidity,
+        pressure: responseData.main.pressure,
+        wind: responseData.wind.speed,
+        visibility: responseData.visibility,
+        error: false,
+        toast_message: "",
+      });
+    } catch (error) {
+      if (error.message === "404") {
+        this.setState({
+          error: true,
+          toast_message:
+            "The location entered is invalid. Please enter a valid location.",
+        });
+        toast("The location entered is invalid", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 1500,
+          className: 'toast-message'
+        });
+      }
+    }
   }
 
   city(event) {
@@ -48,10 +126,11 @@ class App extends React.Component {
     e.preventDefault();
     this.componentWillMount();
   }
-  
-  clear(e) {
-    e.preventDefault();
-    window.location.reload(false);
+
+  clearInput() {
+    this.setState({
+      city_name: "",
+    });
   }
 
   componentWillMount() {
@@ -99,7 +178,7 @@ class App extends React.Component {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1500,
             className: 'toast-message'
-        });
+          });
         }
       });
   }
@@ -122,8 +201,10 @@ class App extends React.Component {
           <button className="button" onClick={this.submit}>
             <p className="p-submit">SUBMIT</p>
           </button>
+
           <button className="button" onClick={this.clear}>
             <p className="p-submit">CLEAR</p>
+
           </button>
         </form>
         <Appcontainer
@@ -137,7 +218,7 @@ class App extends React.Component {
           visibility={this.state.visibility}
         />
         {this.state.error && (
-          <ToastContainer/>
+          <ToastContainer />
         )}
       </div>
     );

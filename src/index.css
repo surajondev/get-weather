@@ -17,10 +17,16 @@ footer {
   color: white;
   background-image: linear-gradient(to right, #051937, #0d2750, #16376b, #214786, #2c57a3);
   padding: 1.5rem;
+ 
+  text-align: center;
 }
+
+
 
 header {
   margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  
 }
 
 footer {
@@ -40,6 +46,7 @@ a:hover {
   width: 90%;
   max-width: 1110px;
   margin: 0 auto;
+    
 }
 
 /* TYPOGRAPHY */
@@ -49,6 +56,16 @@ a:hover {
   display: flex;
   justify-content: center;
   padding-left: 0.6rem;
+  font-size: 3rem;
+  font-weight: 24px;
+  padding-left: 0.rem;
+  font-family:Arial, Helvetica, sans-serif  
+}
+.logo{
+  font-size: 50px;
+  vertical-align: middle;
+  margin-left: 10px; 
+
 }
 
 h2 {
@@ -99,6 +116,18 @@ p {
   cursor: pointer;
   transition: 0.5s;
 }
+.clear-button{
+   font-size:17px ;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #7c77fe;
+  border-radius: 10em;
+  padding: 1.1rem 2rem;
+  cursor: pointer;
+  color: white;
+
+}
 
 .cancel-button {
   color: white;
@@ -111,6 +140,12 @@ p {
 .form {
   justify-content: center;
 }
+
+
+.clear-button:hover {
+  background-color: #6c7077;
+}
+
 
 .submit-button:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -275,4 +310,7 @@ p {
   100% {
     transform: rotate(360deg);
   }
+}
+.footer1{
+  font-size: 20px;
 }

@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 class App extends React.Component {
   constructor() {
     super();
+    
+    
     this.state = {
       city_name: "london",
       error: false,
@@ -23,6 +25,7 @@ class App extends React.Component {
     };
     this.city = this.city.bind(this);
     this.submit = this.submit.bind(this);
+    this.clearInput = this.clearInput.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
     this.closeToasterMessage = this.closeToasterMessage.bind(this);
   }
@@ -47,6 +50,11 @@ class App extends React.Component {
   submit(e) {
     e.preventDefault();
     this.componentWillMount();
+  }
+  clearInput() {
+    this.setState({
+      city_name: "",
+    });
   }
 
   componentWillMount() {
@@ -116,6 +124,9 @@ class App extends React.Component {
           ></input>
           <button className="submit-button" onClick={this.submit}>
             <p className="p-submit">SUBMIT</p>
+          </button>
+          <button className="clear-button" onClick={this.clearInput}>
+            Clear
           </button>
         </form>
         <Appcontainer

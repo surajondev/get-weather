@@ -96,6 +96,18 @@ p {
   padding: 0 2rem;
   cursor: pointer;
 }
+.clear-button{
+   font-size:17px ;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #7c77fe;
+  border-radius: 10em;
+  padding: 1.1rem 2rem;
+  cursor: pointer;
+  color: white;
+
+}
 
 .cancel-button {
   color: white;
@@ -108,6 +120,12 @@ p {
 .form {
   justify-content: center;
 }
+
+
+.clear-button:hover {
+  background-color: #6c7077;
+}
+
 
 .submit-button:hover {
   background-color: #6c7077;

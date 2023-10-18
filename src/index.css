@@ -1,10 +1,11 @@
 html {
   font-size: 16px;
 }
+
 body {
   margin: 0 auto;
-  font-family: Arial, sans-serif;
-  background-color: #161d28;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #202c3f;
 }
 
 img:not(.large-icon) {
@@ -12,7 +13,7 @@ img:not(.large-icon) {
   margin-top: 2rem;
 }
 
-header,
+
 footer {
   color: white;
   background-color: #192733;
@@ -21,6 +22,9 @@ footer {
 
 header {
   margin-bottom: 2rem;
+ text-align: center;
+ color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 footer {
@@ -44,8 +48,8 @@ a:hover {
 
 /* TYPOGRAPHY */
 .title {
-  font-size: 2.5rem;
-  font-weight: 20px;
+  font-size: 4rem;
+  font-weight: 50px;
   padding-left: 0.6rem;
 }
 
@@ -122,38 +126,52 @@ p {
   width: 100%;
   cursor: pointer;
 }
-
+/* Container styles */
+.container-small,
 .container-medium {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1rem 0 1rem;
-  padding: 1rem;
-  background: #7c77fe;
-  border-radius: 10px;
-  width: 65%;
-  box-shadow: 10px 10px #6c7077;
-  justify-content: space-between;
-  transition: transform 0.5s ease;
-}
-.container-medium:hover {
-  transform: scale(1.025);
-}
-
-.container-small {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 1rem 0 1rem;
-  padding: 1rem;
-  width: 30%;
-  background: #7c77fe;
+  padding: 2%;
   border-radius: 10px;
-  box-shadow: 10px 10px #6c7077;
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
+
+/* Small container styles */
+.container-small {
+  width: 30%;
+  background: linear-gradient(135deg, #7c77fe, #835ef5); /* Gradient background */
+  box-shadow: 5px 5px 10px rgba(108, 112, 119, 0.4);
+}
+
+.container-small:hover {
+  background: linear-gradient(135deg, #835ef5, #7c77fe); /* Gradient background on hover */
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Medium container styles */
+.container-medium {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 65%;
+  background: linear-gradient(135deg, #7c77fe, #835ef5); /* Gradient background */
+  box-shadow: 5px 5px 10px rgba(108, 112, 119, 0.4);
+}
+
+.container-medium:hover {
+  background: linear-gradient(135deg, #835ef5, #7c77fe); /* Gradient background on hover */
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+
+.container-medium:hover {
+  transform: scale(1.025);
+}
+
+
 
 .container-small:hover {
   transform: scale(1.025);
@@ -179,6 +197,12 @@ p {
   left: 0;
   right: 0;
   margin: 0px auto;
+}
+.github{
+  font-size: 30px;
+}
+.github  :hover{
+  color:rgb(56, 44, 214);
 }
 
 .toast {

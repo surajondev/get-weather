@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import {WiHumidity} from 'react-icons/wi'
 
 function Appcontainer(props) {
   return (
@@ -21,16 +22,13 @@ function Appcontainer(props) {
           </div>
         </div>
         <div className="container-small">
-          <img
-            alt={'Humidity'}
-            src="https://cdn-icons-png.flaticon.com/512/727/727790.png"
-            className="medium-icon"
-          ></img>
-          <center>
-            <p>Humidity</p>
-            <h1>{props.humidity}%</h1>
-          </center>
-        </div>
+  <WiHumidity style={{ fontSize: '8em' }} /> {/* Adjust the '2em' value to change the size */}
+  <center>
+    <p>Humidity</p>
+    <h1>{props.humidity}%</h1>
+  </center>
+</div>
+
       </div>
       <div className="row">
         <div className="container-small">

@@ -15,4 +15,4 @@ function Footer(){
     )
 }
 
-export default
+export default Footer

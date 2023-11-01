@@ -241,20 +241,11 @@ p {
 
   .submit-button {
     max-width: 250px;
-    font-family: Arial, sans-serif;
-    background-color: #7c77fe;
-    border-radius: 10em;
-    padding: 0 2rem;
-    cursor: pointer;
+
   }
   
   .cancel-button {
     max-width: 250px;
-    color: white;
-    background-color: #91969d;
-    border-radius: 10em;
-    outline: none;
-    cursor: pointer;
   }
 }
 

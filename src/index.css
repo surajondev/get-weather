@@ -83,6 +83,10 @@ p {
   border: 3px solid gray;
 }
 .input-box {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 20px !important;
   font-size: 1.2rem;
   padding: 1rem;
   border: 2px solid #161d28;
@@ -92,8 +96,9 @@ p {
 }
 
 .submit-button {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  display: block;
+  width: 90%;
+  margin: 0 auto 5px;
   font-family: Arial, sans-serif;
   background-color: #7c77fe;
   border-radius: 10em;
@@ -101,21 +106,30 @@ p {
   cursor: pointer;
 }
 
+.submit-button:hover {
+  background-color: #6c7077;
+}
+
 .cancel-button {
+  display: block;
+  width: 90%;
+  margin: 0 auto 5px;
   color: white;
-  background-color: transparent;
-  border: none;
+  background-color: #91969d;
+  border-radius: 10em;
   outline: none;
   cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #5b5e62;
 }
 
 .form {
   justify-content: center;
 }
 
-.submit-button:hover {
-  background-color: #6c7077;
-}
+
 
 /* INFORMATION CARD */
 
@@ -217,6 +231,24 @@ p {
   justify-content: space-around;
 }
 
+@media (min-width: 600px) {
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 550px;
+    margin: auto;
+  }
+
+  .submit-button {
+    max-width: 250px;
+
+  }
+  
+  .cancel-button {
+    max-width: 250px;
+  }
+}
+
 @media (max-width: 700px) {
   html {
     font-size: 14px;
@@ -227,7 +259,7 @@ p {
   }
 
   .container-medium {
-    margin: 1rem 0;
+    margin: 1rem auto;
     width: 90%;
     transition: transform 0.5s ease;
   }
@@ -237,7 +269,7 @@ p {
   }
 
   .container-small {
-    margin: 1rem 0;
+    margin: 1rem auto;
     width: 90%;
     transition: transform 0.5s ease;
   }

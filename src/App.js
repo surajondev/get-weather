@@ -1,14 +1,13 @@
 import React from "react";
 import Appcontainer from "./Appcontainer.js";
 import "./index.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends React.Component {
   constructor() {
     super();
-    
-    
+
     this.state = {
       city_name: "london",
       error: false,
@@ -44,8 +43,6 @@ class App extends React.Component {
       );
       const reverseGeocodeData = await reverseGeocodeRes.json();
       const cityName = reverseGeocodeData[0]?.name || "london";
-
-
 
       this.setState({
         city_name: cityName,
@@ -99,7 +96,7 @@ class App extends React.Component {
         toast("The location entered is invalid", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1500,
-          className: 'toast-message'
+          className: "toast-message",
         });
       }
     }
@@ -177,7 +174,7 @@ class App extends React.Component {
           toast("The location entered is invalid", {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1500,
-            className: 'toast-message'
+            className: "toast-message",
           });
         }
       });
@@ -185,27 +182,27 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="blur-wall"></div>
+        <div className='blur-wall'></div>
         <div
-          className="loader"
+          className='loader'
           style={{ display: this.state.displayLoader }}
         ></div>
-        <form className="container form">
+        <form className='container form'>
           <input
-            className="input-box"
-            name="t1"
-            type="text"
+            className='input-box'
+            name='t1'
+            type='text'
             onChange={this.city}
-            placeholder="Enter desired location"
+            placeholder='Enter desired location'
           ></input>
-          <button className="button" onClick={this.submit}>
-            <p className="p-submit">SUBMIT</p>
-          </button>
-
-          <button className="button" onClick={this.clear}>
-            <p className="p-submit">CLEAR</p>
-
-          </button>
+          <div className='button-container'>
+            <button className='submit-button' onClick={this.submit}>
+              <p className='p-submit'>SUBMIT</p>
+            </button>
+            <button className='cancel-button' onClick={this.clear}>
+              <p className='p-submit'>CLEAR</p>
+            </button>
+          </div>
         </form>
         <Appcontainer
           temp={this.state.temp}
@@ -217,9 +214,7 @@ class App extends React.Component {
           wind={this.state.wind}
           visibility={this.state.visibility}
         />
-        {this.state.error && (
-          <ToastContainer />
-        )}
+        {this.state.error && <ToastContainer />}
       </div>
     );
   }

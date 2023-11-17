@@ -48,6 +48,7 @@ a:hover {
 
 /* TYPOGRAPHY */
 .title {
+  text-align: left;
   font-size: 4rem;
   font-weight: 50px;
   padding-left: 0.6rem;

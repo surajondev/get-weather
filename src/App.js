@@ -39,7 +39,7 @@ class App extends React.Component {
       const { latitude, longitude } = position.coords;
 
       const reverseGeocodeRes = await fetch(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`
       );
       const reverseGeocodeData = await reverseGeocodeRes.json();
       const cityName = reverseGeocodeData[0]?.name || "london";
@@ -66,7 +66,7 @@ class App extends React.Component {
   }
 
   async fetchWeatherData(city) {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -182,25 +182,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='blur-wall'></div>
+        <div className="blur-wall"></div>
         <div
-          className='loader'
+          className="loader"
           style={{ display: this.state.displayLoader }}
         ></div>
-        <form className='container form'>
+        <form className="container form">
           <input
-            className='input-box'
-            name='t1'
-            type='text'
+            className="input-box"
+            name="t1"
+            type="text"
             onChange={this.city}
-            placeholder='Enter desired location'
+            placeholder="Enter desired location"
           ></input>
-          <div className='button-container'>
-            <button className='submit-button' onClick={this.submit}>
-              <p className='p-submit'>SUBMIT</p>
+          <div className="button-container">
+            <button className="submit-button" onClick={this.submit}>
+              <p className="p-submit">SUBMIT</p>
             </button>
-            <button className='cancel-button' onClick={this.clear}>
-              <p className='p-submit'>CLEAR</p>
+            <button className="cancel-button" onClick={this.clear}>
+              <p className="p-submit">CLEAR</p>
             </button>
           </div>
         </form>

@@ -135,7 +135,7 @@ class App extends React.Component {
     // Show loader
     this.setState({ displayLoader: "block" });
     const city = this.state.city_name;
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPEN_WEATHER_SECRET}`;
     fetch(url)
       .then((response) => {
         // Hide Loader when get the response
